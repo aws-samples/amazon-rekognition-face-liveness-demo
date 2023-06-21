@@ -8,9 +8,9 @@ import { FaceLivenessDetector } from '@aws-amplify/ui-react-liveness';
 function FaceLiveness({faceLivenessAnalysis}) {
     const [loading, setLoading] = React.useState(true);
     const [sessionId, setSessionId] = React.useState(null)
-    //const [faceLivenessAnalysis, setFaceLivenessAnalysis] = React.useState(null)
+   
 
-    const endpoint = process.env.REACT_APP_ENV_API_URL ? process.env.REACT_APP_ENV_API_URL : 'https://0vuaz73l6f.execute-api.us-east-1.amazonaws.com/prod/'
+    const endpoint = process.env.REACT_APP_ENV_API_URL ? process.env.REACT_APP_ENV_API_URL : ''
 
     useEffect(() => {
         /*
@@ -25,7 +25,7 @@ function FaceLiveness({faceLivenessAnalysis}) {
         };
         fetchCreateLiveness();
 
-    })
+    },[])
 
     /*
    * Get the Face Liveness Session Result

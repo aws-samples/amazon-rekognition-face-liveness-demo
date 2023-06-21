@@ -22,8 +22,7 @@ def get_session_results(session_id):
         response = rek_client.get_face_liveness_session_results(SessionId=session_id)
         imageStream = io.BytesIO(response['ReferenceImage']['Bytes'])
         referenceImage = base64.b64encode(imageStream.getvalue())
-        response['ReferenceImage']['Bytes'] = str(response['ReferenceImage']['Bytes'])
-        response['ReferenceImage']['Base64'] = referenceImage
+        response['ReferenceImage']['Bytes'] = referenceImage
 
         return response
     except rek_client.exceptions.AccessDeniedException:

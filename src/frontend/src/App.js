@@ -13,16 +13,16 @@ import {
 
 Auth.configure({
   "Auth": {
-    // "identityPoolId": process.env.REACT_APP_IDENTITYPOOL_ID,
-    // "region": process.env.REACT_APP_REGION,
-    // "userPoolId": process.env.REACT_APP_USERPOOL_ID,
-    // "mandatorySignIn": false,
-    // "userPoolWebClientId": process.env.REACT_APP_WEBCLIENT_ID
-    "identityPoolId": "us-east-1:70334816-9f51-47c3-b331-8e9aec04ddd9",
-    "region": "us-east-1",
-    "userPoolId": "us-east-1_YGkclllZI",
+    "identityPoolId": process.env.REACT_APP_IDENTITYPOOL_ID,
+    "region": process.env.REACT_APP_REGION,
+    "userPoolId": process.env.REACT_APP_USERPOOL_ID,
     "mandatorySignIn": false,
-    "userPoolWebClientId": "o7f5qcifacde1edfm0ompvrs4"
+    "userPoolWebClientId": process.env.REACT_APP_WEBCLIENT_ID
+    // "identityPoolId": "us-east-1:70334816-9f51-47c3-b331-8e9aec04ddd9",
+    // "region": "us-east-1",
+    // "userPoolId": "us-east-1_YGkclllZI",
+    // "mandatorySignIn": false,
+    // "userPoolWebClientId": "o7f5qcifacde1edfm0ompvrs4"
   }
 })
 
@@ -36,7 +36,12 @@ function App() {
     if (faceLivenessAnalysis !== null) {
       setFaceLivenessAnalysis(faceLivenessAnalysis)
     }
-}
+  }
+
+  const tryagain = () =>{
+    setFaceLivenessAnalysis(null)
+  }
+
 
   return (
     <ThemeProvider>
@@ -56,7 +61,7 @@ function App() {
           maxWidth="740px"
         >
           {faceLivenessAnalysis && faceLivenessAnalysis.Confidence ? (
-            <ReferenceImage faceLivenessAnalysis={faceLivenessAnalysis}></ReferenceImage>
+            <ReferenceImage faceLivenessAnalysis={faceLivenessAnalysis} tryagain={tryagain}></ReferenceImage>
           ) :
             (<FaceLiveness faceLivenessAnalysis={getfaceLivenessAnalysis} />)}
 
