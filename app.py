@@ -12,12 +12,12 @@ def get_environment()->core.Environment:
   '''
   region = os.environ.get("CDK_DEFAULT_REGION")
   if  region is None:
-    region = cdk.Aws.REGION
+    region = core.Aws.REGION
 
   account = os.environ.get('CDK_DEFAULT_ACCOUNT')
 
   if account is None:
-    account = cdk.Aws.ACCOUNT_ID
+    account = core.Aws.ACCOUNT_ID
 
 
   return core.Environment(
