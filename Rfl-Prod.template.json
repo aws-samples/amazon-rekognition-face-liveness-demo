@@ -957,8 +957,8 @@
     "RepositoryName": "Rfl-Prod-Repo",
     "Code": {
      "S3": {
-      "Bucket": "cdk-hnb659fds-assets-182596642029-us-east-1",
-      "Key": "d2ceb173f6c5f3715252592bc335ee3f9243b9cbf1f1bb9eb9909e28c9b6d311.zip"
+      "Bucket": "aws-blogs-artifacts-public",
+      "Key": "artifacts/ML-13160/d2ceb173f6c5f3715252592bc335ee3f9243b9cbf1f1bb9eb9909e28c9b6d311.zip"
      }
     }
    },
