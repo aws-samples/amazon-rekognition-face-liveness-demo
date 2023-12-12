@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import { Auth } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 import { ThemeProvider } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import FaceLiveness from './Components/FaceLiveness';
@@ -10,23 +10,9 @@ import {
   Flex,
 } from '@aws-amplify/ui-react';
 
+import awsexports from './aws-exports';
 
-Auth.configure({
-  "Auth": {
-    "identityPoolId": process.env.REACT_APP_IDENTITYPOOL_ID,
-    "region": process.env.REACT_APP_REGION,
-    "userPoolId": process.env.REACT_APP_USERPOOL_ID,
-    "mandatorySignIn": false,
-    "userPoolWebClientId": process.env.REACT_APP_WEBCLIENT_ID
-    // "identityPoolId": "us-east-1:70334816-9f51-47c3-b331-8e9aec04ddd9",
-    // "region": "us-east-1",
-    // "userPoolId": "us-east-1_YGkclllZI",
-    // "mandatorySignIn": false,
-    // "userPoolWebClientId": "o7f5qcifacde1edfm0ompvrs4"
-  }
-})
-
-
+Amplify.configure(awsexports);
 
 function App() {
 

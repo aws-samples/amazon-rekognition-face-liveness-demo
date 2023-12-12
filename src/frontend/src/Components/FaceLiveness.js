@@ -58,6 +58,9 @@ function FaceLiveness({faceLivenessAnalysis}) {
                     sessionId={sessionId}
                     region="us-east-1"
                     onAnalysisComplete={handleAnalysisComplete}
+                    onError={(error) => {
+                        console.error(error);
+                      }}
                 />
             )}
         </>
